@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Advanced Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="quiz-container">
+
+    <div class="top-bar">
+        <span id="question-number">Question 1 / 10</span>
+        <span id="timer">⏱ 59s</span>
+        <button id="soundToggle">🔊</button>
+        <button id="deleteHistoryTop">🗑 Delete History</button>
+        <button id="darkToggle">🌙</button>
+    </div>
+
+    <div class="progress-bar">
+        <div id="progress"></div>
+    </div>
+
+    <h2 id="question"></h2>
+    <div id="answers" class="answers"></div>
+
+    <!-- RESULT -->
+    <div id="result" class="hide">
+        <h2>Final Result</h2>
+        <p id="score"></p>
+        <p id="percentage"></p>
+        <p id="detailResult"></p>
+        <p id="badge"></p>
+        <p id="highScore"></p>
+
+        <button onclick="showReview()">Review Answers</button>
+        <button onclick="showHistory()">View History</button>
+        <button onclick="exportPDF()">Export PDF</button>
+        <button onclick="restartQuiz()">Restart Quiz</button>
+    </div>
+
+    <!-- REVIEW -->
+    <div id="review" class="hide">
+        <h2>Question Review</h2>
+        <div id="reviewList"></div>
+        <button onclick="restartQuiz()">Back</button>
+    </div>
+
+    <!-- HISTORY -->
+    <div id="history" class="hide">
+        <h2>Quiz History</h2>
+        <div id="historyList"></div>
+        <button onclick="restartQuiz()">Back</button>
+    </div>
+
+</div>
+
+<div id="history" class="hide">
+    <h2>Quiz History</h2>
+    <div id="historyList"></div>
+    <div class="history-buttons">
+        <button onclick="restartQuiz()">Back</button>
+        <button onclick="deleteHistory()">Delete History</button>
+    </div>
+</div>
+
+<div id="history" class="hide">
+    <h2>Quiz History</h2>
+    <div id="historyList"></div>
+    
+    <div class="history-buttons">
+        <button onclick="restartQuiz()">Back</button>
+        <button id="deleteHistoryBtn">Delete History</button>
+    </div>
+</div>
+
+
+<!-- Sounds -->
+<audio id="correctSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg"></audio>
+<audio id="wrongSound" src="https://actions.google.com/sounds/v1/cartoon/cartoon_boing.ogg"></audio>
+<audio id="finishSound" src="https://actions.google.com/sounds/v1/cartoon/slide_whistle_to_drum.ogg"></audio>
+
+<!-- PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script src="script.js"></script>
+</body>
+</html>
